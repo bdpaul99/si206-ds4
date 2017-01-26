@@ -37,12 +37,11 @@ class TestFactorial(unittest.TestCase):
         return
 
 
-
-
-print("check_leap_year(2000): {}".format(check_leap_year(2000)))
-print("check_leap_year(1990): {}".format(check_leap_year(1990)))
-print("check_leap_year(2012): {}".format(check_leap_year(2012)))
-print("check_leap_year(2100): {}".format(check_leap_year(2100)))
+class TestLeapYear(unittest.TestCase):
+    def testLeapYear(self):
+        self.assertEqual(check_leap_year(1900),False,"Checking to see if 1900 is a leap year")
+        self.assertEqual(check_leap_year(1912),True, "Checking to see if 1912 is a leap year")
+        self.assertEqual(check_leap_year(2000),True, "Checking to see if 2000 is a leap year")
 
 
 unittest.main(verbosity=2)
